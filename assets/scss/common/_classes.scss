@@ -17,9 +17,19 @@
 }
 
 .btn--light {
-  min-width: 250px;
-  min-height: $gap-x3;
-  font-size: 1.125rem;
+  @include lg-min {
+    min-width: 250px;
+    min-height: $gap-x3;
+    font-size: 1.125rem;
+  }
+  @include lg-md {
+    min-width: 200px;
+    min-height: 50px;
+  }
+  @include md {
+    min-width: 170px;
+    min-height: $gap-x2;
+  }
   background-color: rgba($color-light, 0.1);
   border-color: $color-light;
 }

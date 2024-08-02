@@ -10,20 +10,92 @@
     @include md-min {
       display: none;
     }
+    position: relative;
+    width: $gap-lg;
+    height: 23px;
+    margin: $gap-sm 0;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    &-row {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $color-light;
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 9px;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+      }
+    }
+
+    &--active span {
+      &:nth-child(1) {
+        top: 9px;
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        left: -$gap-lg;
+      }
+
+      &:nth-child(3) {
+        top: 9px;
+        transform: rotate(-135deg);
+      }
+    }
   }
 
   &__list {
-    @include unlist(0 (-$gap-sm) 0 0);
-    width: 100%;
-    display: grid;
-    gap: $gap;
-    grid-template-columns: repeat(auto-fit, minmax($gap-sm * 5, max-content));
-    justify-content: end;
+    @include md-min {
+      @include unlist(0 (-$gap-sm) 0 0);
+      width: 100%;
+      display: grid;
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      justify-content: end;
+    }
+    @include md {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: $gap;
+      @include unlist;
+      text-align: right;
+      background-color: rgba($color-gray-dark, 0.9);
+      @include box-shadow
+    }
+  }
+
+  &__item {
+    @include md {
+      margin: $gap $gap-sm;
+    }
   }
 
   &__link {
+    @include md-min {
+      padding: $gap $gap-sm;
+    }
+    @include md {
+      padding: $gap-sm $gap;
+    }
     display: block;
-    padding: $gap $gap-sm;
     font-size: 1.125rem;
     letter-spacing: 0.09em;
     transition: color 0.5s;
@@ -34,4 +106,7 @@
     }
   }
 }
+
+
+
 
