@@ -1,0 +1,7 @@
+@use "../presets" as *;
+
+%container {
+  width: min(100% - $gap-x2, $ul);
+  margin-inline: auto;
+  //padding: 0 $gap;
+}

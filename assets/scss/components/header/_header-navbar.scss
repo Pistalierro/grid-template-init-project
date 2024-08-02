@@ -1,2 +1,37 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.header-navbar {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+
+  &__btn {
+    @include md-min {
+      display: none;
+    }
+  }
+
+  &__list {
+    @include unlist(0 (-$gap-sm) 0 0);
+    width: 100%;
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat(auto-fit, minmax($gap-sm * 5, max-content));
+    justify-content: end;
+  }
+
+  &__link {
+    display: block;
+    padding: $gap $gap-sm;
+    font-size: 1.125rem;
+    letter-spacing: 0.09em;
+    transition: color 0.5s;
+
+    &:hover,
+    &:focus {
+      color: $color-accent;
+    }
+  }
+}
+
