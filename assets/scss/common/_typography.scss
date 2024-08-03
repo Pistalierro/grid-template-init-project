@@ -29,6 +29,15 @@ h1 {
   line-height: 1.2;
 }
 
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  font-family: $font-header;
+}
+
 a {
   text-decoration: none;
   color: $color-light;
