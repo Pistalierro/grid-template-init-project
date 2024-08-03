@@ -10,9 +10,14 @@
   padding: $gap;
 
   &__title {
+    @include md-min {
+      font-size: 1.25rem;
+    }
+    @include md {
+      font-size: 1.125rem;
+    }
     margin: 0;
     @include abs-position;
-    font-size: 1.25rem;
     z-index: 1;
     letter-spacing: 0.1em;
   }
