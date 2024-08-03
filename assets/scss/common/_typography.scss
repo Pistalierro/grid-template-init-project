@@ -30,8 +30,21 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  @include lg-min {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  @include lg-md {
+    font-size: 2rem;
+    margin-bottom: 2.65rem;
+  }
+  @include md {
+    margin-bottom: 2.25rem;
+  }
+  @include sm {
+    text-align: center;
+  }
+
   color: $color-primary;
   letter-spacing: 0.1em;
   line-height: 1.2;

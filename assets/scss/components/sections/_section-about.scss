@@ -3,14 +3,33 @@
 
 .about {
   letter-spacing: 0.055em;
-  padding: $gap-x5 0;
   background-color: $color-gray-light;
+  @include lg-min {
+    padding: $gap-x5 0;
+  }
+  @include lg-md {
+    padding: $gap-x4 0;
+  }
+  @include md {
+    padding: $gap-x3 0;
+  }
 
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: 1fr 271px;
-    gap: $gap-x5;
+    @include lg-min {
+      gap: $gap-x5;
+    }
+    @include lg-md {
+      gap: $gap-x2;
+    }
+    @include md-min {
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      grid-template-columns: 1fr 236px;
+      gap: $gap;
+    }
   }
 
   h2 {
@@ -19,20 +38,33 @@
 
   &__content {
     p {
-      font-size: 1.125rem;
+      @include lg-min {
+        font-size: 1.125rem;
+      }
 
       &:first-of-type {
         position: relative;
         margin-top: -5px;
 
         &::after {
-          content: "";
-          position: absolute;
-          width: 2px;
-          height: 200px;
-          background-color: rgba($color-gray, 0.1);
-          top: 0;
-          right: -50px;
+          @include sm-min {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 200px;
+            background-color: rgba($color-gray, 0.1);
+            top: 0;
+          }
+
+          @include lg-min {
+            right: -50px;
+          }
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md-sm {
+            right: -$gap-sm;
+          }
         }
       }
     }
