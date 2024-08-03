@@ -713,7 +713,6 @@ a {
 }
 .form__container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .form-item__input {
@@ -829,6 +828,9 @@ a {
   }
   .about__container {
     grid-template-columns: 1fr 271px;
+  }
+  .form__container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 992px) {
@@ -949,6 +951,12 @@ a {
   }
   .about__content p:first-of-type::after {
     right: -10px;
+  }
+  .form__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-item:nth-of-type(1) {
+    grid-column: 1/span 2;
   }
 }
 @media (max-width: 575.8px) {

@@ -8,11 +8,22 @@
   &__container {
     @extend %container;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: $gap;
+    @include md-min {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &-item {
+
+    @include md-sm {
+      &:nth-of-type(1) {
+        grid-column: 1 / span 2;
+      }
+    }
 
     &__input {
       width: 100%;
