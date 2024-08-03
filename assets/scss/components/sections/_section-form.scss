@@ -1,0 +1,58 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.form {
+  background-color: $color-primary;
+  padding: $gap-lg 0;
+
+  &__container {
+    @extend %container;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap;
+  }
+
+  &-item {
+
+    &__input {
+      width: 100%;
+      min-height: $gap-x3;
+      padding: 0 $gap-lg;
+      background-color: rgba($color-light, 0.05);
+      border: 2px solid rgba($color-light, 0);
+      border-bottom-color: rgba($color-light, 0.25);
+      font-size: 1.125rem;
+      letter-spacing: 0.15em;
+      color: $color-light;
+      transition: 0.5s;
+
+      &::placeholder {
+        color: $color-gray;
+      }
+
+      &:hover {
+        background-color: rgba($color-light, 0.15);
+        border-color: rgba($color-light, 0.15);
+        border-bottom-color: $color-light;
+
+        &::placeholder {
+          color: rgba($color-light, 0.5);
+        }
+      }
+    }
+  }
+
+  .btn--primary {
+    width: 100%;
+    min-width: auto;
+    background-color: rgba($color-light, 0.1);
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.2);
+    color: $color-light;
+
+    &:hover {
+      background-color: $color-accent;
+      border-color: $color-light;
+    }
+  }
+}
