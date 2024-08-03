@@ -35,6 +35,9 @@ $local-gap: calc($gap-x2 / 3);
     @media (min-height: 691px) {
       grid-auto-rows: calc(33.33vh - #{$local-gap});
     }
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - #{$local-gap});
+    }
   }
 
   &__actions {

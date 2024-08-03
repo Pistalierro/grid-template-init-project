@@ -786,10 +786,6 @@ p {
   background-color: #d66926;
   border-color: #ffffff;
 }
-
-.posts {
-  padding: 100px 0;
-}
 .posts h2 {
   margin-top: 0;
 }
@@ -797,8 +793,6 @@ p {
   display: grid;
   gap: 20px;
   padding-bottom: 20px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
 }
 .posts__actions {
   display: -webkit-box;
@@ -817,31 +811,33 @@ p {
 }
 .post-item__link {
   display: grid;
-  overflow: hidden;
-  height: 100%;
   grid-template-rows: 300px 1fr;
+  height: 100%;
+  overflow: hidden;
 }
 .post-item__image {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  overflow: hidden;
   background-color: #2d3651;
 }
 .post-item__image img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 .post-item__caption {
-  display: grid;
   padding: 20px;
+  display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
 }
@@ -984,6 +980,13 @@ p {
   .about__content p:first-of-type::after {
     right: -50px;
   }
+  .posts {
+    padding: 100px 0;
+  }
+  .posts__grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+  }
 }
 
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -1013,6 +1016,13 @@ p {
   }
   .about__content p:first-of-type::after {
     right: -20px;
+  }
+  .posts {
+    padding: 80px 0;
+  }
+  .posts__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p6 p6";
   }
 }
 
@@ -1060,6 +1070,9 @@ p {
   .about {
     padding: 60px 0;
   }
+  .posts {
+    padding: 60px 0;
+  }
 }
 
 @media (max-width: 767.8px) and (min-width: 576px) {
@@ -1079,6 +1092,16 @@ p {
   }
   .form-item:nth-of-type(1) {
     grid-column: 1/span 2;
+  }
+  .posts__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+  }
+}
+
+@media (max-height: 690px) {
+  .skills__grid {
+    grid-auto-rows: calc(230px - 13.3333333333px);
   }
 }
 
@@ -1107,5 +1130,8 @@ p {
   }
   .skills__actions {
     margin-bottom: 0;
+  }
+  .posts__grid {
+    grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
   }
 }
