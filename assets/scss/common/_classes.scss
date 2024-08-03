@@ -34,6 +34,14 @@
   border-color: $color-light;
 }
 
+.btn--primary {
+  height: $gap-x3;
+  min-width: 350px;
+  font-size: 1.125rem;
+  background-color: rgba($color-primary, 0.8);
+  border-color: $color-primary;
+}
+
 .hidden {
   display: none;
 }

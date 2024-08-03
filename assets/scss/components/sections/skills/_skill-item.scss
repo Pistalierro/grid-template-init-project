@@ -2,5 +2,62 @@
 @use "../../../mixins" as *;
 
 .skill-item {
-  background-color: red;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: $gap;
+
+  &__title {
+    margin: 0;
+    @include abs-position;
+    font-size: 1.25rem;
+    z-index: 1;
+    letter-spacing: 0.1em;
+  }
+
+  &__link {
+    display: flex;
+    padding: $gap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: color 0.5s;
+  }
+
+  &__image {
+    @include abs-position;
+    background-color: $color-primary;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: transform 0.5s;
+  }
+
+  &__overlay {
+    @include abs-position;
+    background-color: $color-primary;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+  }
+
+  &:hover {
+    .skill-item__link {
+      color: $color-accent;
+    }
+
+    .skill-item__image {
+      transform: scale(1.1);
+    }
+
+    .skill-item__overlay {
+      opacity: 0.95;
+    }
+  }
+}
+
+@for $i from 1 through 9 {
+  .skill-item:nth-of-type(#{$i}) {
+    grid-area: a#{$i};
+  }
 }
