@@ -11,7 +11,8 @@
   border-style: solid;
   transition: background-color 0.5s;
 
-  &:hover {
+  &:hover,
+  &focus {
     background-color: $color-accent;
   }
 }

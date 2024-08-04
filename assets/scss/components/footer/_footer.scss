@@ -34,7 +34,8 @@
       padding: $gap-sm;
       transition: color 0.5s;
 
-      &:hover {
+      &:hover,
+      &focus {
         color: $color-accent;
       }
     }

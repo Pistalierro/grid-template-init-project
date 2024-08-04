@@ -400,7 +400,7 @@ p {
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
-.btn:hover {
+.btn:hover, .btnfocus {
   background-color: #d66926;
 }
 
@@ -924,7 +924,7 @@ p {
   -o-transition: color 0.5s;
   transition: color 0.5s;
 }
-.footer__socials a:hover {
+.footer__socials a:hover, .footer__socials afocus {
   color: #d66926;
 }
 .footer__copy span:first-child {
